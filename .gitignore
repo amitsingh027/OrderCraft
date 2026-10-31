@@ -1,0 +1,15 @@
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+dist/
+backend/target/
+.env
+*.tar.gz
+*.log
+build-log.txt
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db

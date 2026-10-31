@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "projects": {
+    "ordercraft": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.json",
+            "polyfills": [
+              "zone.js"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/access.css"
+            ]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "ordercraft:build"
+          }
+        }
+      }
+    }
+  }
+}

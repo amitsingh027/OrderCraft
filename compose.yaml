@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ordercraft
+      MYSQL_USER: ordercraft
+      MYSQL_PASSWORD: ${DB_PASSWORD:-ordercraft_local}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD:-root_local_change_me}
+    volumes:
+      - ordercraft_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      retries: 30
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://db:3306/ordercraft
+      DB_USER: ordercraft
+      DB_PASSWORD: ${DB_PASSWORD:-ordercraft_local}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env (at least 12 characters)}
+      BASELINE_EXISTING_DATABASE: ${BASELINE_EXISTING_DATABASE:-false}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  ordercraft_data:

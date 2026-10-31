@@ -1,0 +1,7 @@
+**/node_modules
+**/.angular
+**/target
+**/dist
+.git
+.env
+*.zip
