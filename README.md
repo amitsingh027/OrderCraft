@@ -2,6 +2,16 @@
 
 Manufacturing order management built with Angular, Java 17 / Spring Boot and MySQL. Includes orders, a quantity-based BOM, draft purchase orders, production and delivery stages, invoicing, partial payments, customer search and CSV export.
 
+## Start reading the code
+
+- [Beginner walkthrough](docs/START_HERE.md): follow one request from the screen to MySQL.
+- [Folder guide](docs/PROJECT_STRUCTURE.md): what each module owns and where to make changes.
+- [Run and check](docs/RUN_AND_CHECK.md): development commands and a manual acceptance checklist.
+
+The source is grouped by responsibility. Backend routes live in controllers, order rules in
+OrderService, and request/response records in orders/model. Angular separates its models,
+API client, demo fixtures, component and styles. No manufacturing features were added in this reorganization.
+
 ## What changed
 
 - Database mode is now the default. The app starts at sign-in, and connection failures clear operational data and block changes. Live records and credentials are never saved to browser localStorage.

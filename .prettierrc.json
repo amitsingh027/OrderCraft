@@ -1,0 +1,21 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.java",
+      "options": {
+        "tabWidth": 4,
+        "printWidth": 100
+      }
+    },
+    {
+      "files": "*.xml",
+      "options": {
+        "xmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}

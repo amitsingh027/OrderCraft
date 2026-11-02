@@ -1,3 +1,3 @@
-import {bootstrapApplication} from '@angular/platform-browser';
-import {App} from './app.component';
-bootstrapApplication(App).catch(console.error);
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+bootstrapApplication(AppComponent).catch(console.error);

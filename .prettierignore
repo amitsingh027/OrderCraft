@@ -1,0 +1,8 @@
+**/node_modules/**
+**/target/**
+**/dist/**
+**/.angular/**
+**/package-lock.json
+# Applied Flyway migrations must keep their original checksums.
+backend/src/main/resources/db/migration/**
+.env

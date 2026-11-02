@@ -1,3 +1,13 @@
+# Code organization checks — 2 November 2026
+
+- Angular production build passed after moving the component, API client, models, demo fixtures and styles.
+- All 10 backend tests passed after moving packages and extracting OrderService and named workflow methods.
+- Tests use H2 in MySQL compatibility mode; this refactor was not rebuilt in Docker during these checks.
+- Existing Flyway migration files, dependency lockfile, Dockerfile and Compose configuration are unchanged.
+- Existing API routes and the database schema are preserved. No new manufacturing features were added.
+- See docs/START_HERE.md for a reading guide and docs/PROJECT_STRUCTURE.md for the new file locations.
+
+The original verification record follows for historical context.
 # Verification — login, database mode and payment reliability
 
 Verified on 20 October 2026.

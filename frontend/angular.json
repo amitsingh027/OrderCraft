@@ -13,13 +13,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.json",
-            "polyfills": [
-              "zone.js"
-            ],
-            "styles": [
-              "src/styles.css",
-              "src/access.css"
-            ]
+            "polyfills": ["zone.js"],
+            "styles": ["src/styles/styles.css", "src/styles/access.css"]
           }
         },
         "serve": {
